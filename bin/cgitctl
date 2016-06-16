@@ -1,0 +1,2 @@
+export CHERRY_HOME={{appHome}}
+$CHERRY_HOME/bin/apachectl -f $CHERRY_HOME/conf/cgit/cgit-httpd.conf -k $1

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export CHERRY_HOME="{{appHome}}"
+
+$CHERRY_HOME/bin/cgitctl start

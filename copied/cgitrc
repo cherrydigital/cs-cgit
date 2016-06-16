@@ -1,0 +1,56 @@
+#
+# cgit config
+#
+
+#css=/cgit.css
+#logo=/cgit.png
+# Following lines work with the above Apache config
+css=/cgit-css/cgit.css
+logo=/cdn/images/logo_home_70.png
+
+# if you don't want that webcrawler (like google) index your site
+robots=noindex, nofollow
+
+#
+# List of repositories.
+# This list could be kept in a different file (e.g. '/etc/cgitrepos')
+# and included like this:
+#   include=/etc/cgitrepos
+#
+
+#repo.url=MyRepo
+#repo.path=/srv/git/MyRepo.git
+#repo.desc=This is my git repository
+
+#repo.url=MyOtherRepo
+#repo.path=/srv/git/MyOtherRepo.git
+#repo.desc=That's my other git repository
+#project-list=/usr/local/gerrit/project.list
+
+## /* CHERRY get project list from gerrit ##
+gerrit-login-url=http://{{proxy.host}}:{{proxy.http.port}}/gerrit/login/
+gerrit-index-url=http://{{proxy.host}}:{{proxy.http.port}}/gerrit/#/
+gerrit-cgit-url=http://{{proxy.host}}:{{proxy.http.port}}/cgit.cgi/
+gerrit-project-list-url=http://{{proxy.host}}:{{proxy.http.port}}/gerrit/a/projects/
+
+## CHERRY get project list from gerrit */ ##
+
+#snaphots must be located prior to scan-path
+snapshots=tar.gz zip
+#enable-commit-graph=1
+max-stats=quarter
+mimetype.gif=image/gif
+mimetype.html=text/html
+mimetype.jpg=image/jpeg
+mimetype.jpeg=image/jpeg
+mimetype.pdf=application/pdf
+mimetype.png=image/png
+mimetype.svg=image/svg+xml
+scan-path={{appHome}}/sw/gerrit/git
+
+enable-git-config=1
+logo-link=/gerrit/#/admin/projects
+enable-index-links=1
+root-readme=/var/www/htdocs/about.html
+
+## CHERRY not default options
